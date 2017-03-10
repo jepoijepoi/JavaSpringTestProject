@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<definition name="base.definition"
+		template="/jsp/layout.jsp">
+		<put-attribute name="title" value="My App" />
+		<put-attribute name="header" value="/jsp/header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/jsp/footer.jsp" />
+	</definition>
+
+	<definition name="main.page" extends="base.definition">
+		<put-attribute name="title" value="Main Page" />
+		<put-attribute name="body" value="/jsp/main.jsp" />
+	</definition>
+
+	<definition name="viewActorList.page" extends="base.definition">
+		<put-attribute name="title" value="View Actors" />
+		<put-attribute name="body" value="/jsp/viewActorList.jsp" />
+	</definition>
+
+	<definition name="insertActorForm.page" extends="base.definition">
+		<put-attribute name="title" value="Add New Actor" />
+		<put-attribute name="body" value="/jsp/insertActorForm.jsp" />
+	</definition>
+	
+	<definition name="editActorForm.page" extends="base.definition">
+		<put-attribute name="title" value="Edit Actor" />
+		<put-attribute name="body" value="/jsp/editActorForm.jsp" />
+	</definition>
+	
+</tiles-definitions>
