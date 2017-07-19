@@ -6,7 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 	
 public class BaseController {
 
-	@RequestMapping(value = "/main", method = RequestMethod.GET)
+	@RequestMapping(value = "/mainPage", method = RequestMethod.GET)
 	public ModelAndView index() {
 		return new ModelAndView("main.page");
 	}
