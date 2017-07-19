@@ -8,9 +8,9 @@
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/sakila" />
+		<property name="url" value="jdbc:mysql://127.0.0.1:3306/sakila" />
 		<property name="username" value="root" />
-		<property name="password" value="password" />
+		<property name="password" value="Jep@012016" />
 	</bean>
 
 	<bean id="jdbctemplate" class="org.springframework.jdbc.core.JdbcTemplate">
@@ -21,8 +21,8 @@
 		<property name="jdbcTemplateObject" ref="jdbctemplate"></property>
 	</bean>
 
-	<bean id="helloWorld" class="com.ul.testwebproject.HelloWorld">
-		<property name="message" value="Hello World!" />
+	<bean id="helloWorld" class="com.ul.testwebproject.HelloWorld" scope="prototype">
+		<!-- property name="message" value="Hello World!" /-->
 	</bean>
 
 </beans>

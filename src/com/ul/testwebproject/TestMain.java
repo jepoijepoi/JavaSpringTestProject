@@ -30,17 +30,23 @@ public class TestMain {
 
 		context = new ClassPathXmlApplicationContext("Beans.xml");
 
-		HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
-		obj.getMessage();
-		log.info("Hello World!");
+		HelloWorld objA = (HelloWorld) context.getBean("helloWorld");
+		objA.setMessage("Hello WORLD!");
+		objA.getMessage();
+		
+		HelloWorld objB = (HelloWorld) context.getBean("helloWorld");
+		//objB.setMessage("Hi WORLD!");
+		objB.getMessage();
 
-		ActorDAO actorDAO = (ActorDAO) context.getBean("actorDAO");
+		//log.info("Hello World!");
 
-		Actor actor = actorDAO.getActorById(22);
-		System.out.println(actor.getFirstName() + " " + actor.getLastName());
+//		ActorDAO actorDAO = (ActorDAO) context.getBean("actorDAO");
 
-		List<Actor> actorsList = actorDAO.getActors();
-		System.out.println(actorsList.get(22).getFirstName());
+//		Actor actor = actorDAO.getActorById(22);
+//		System.out.println(actor.getFirstName() + " " + actor.getLastName());
+
+//		List<Actor> actorsList = actorDAO.getActors();
+//		System.out.println(actorsList.get(22).getFirstName());
 	}
 
 }
