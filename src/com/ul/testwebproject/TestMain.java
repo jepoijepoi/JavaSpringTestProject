@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.ul.testwebproject.beans.Actor;
@@ -28,8 +29,10 @@ public class TestMain {
 		// BigDecimal.valueOf(Double.parseDouble(attrValue)).toPlainString();
 		// System.out.println(attrValue);
 
-		context = new ClassPathXmlApplicationContext("Beans.xml");
+		//context = new ClassPathXmlApplicationContext("Beans.xml");
 
+		context = new AnnotationConfigApplicationContext(AnnotationConfig.class);
+		
 		HelloWorld objA = (HelloWorld) context.getBean("helloWorld");
 		objA.setMessage("Hello WORLD!");
 		objA.getMessage();
